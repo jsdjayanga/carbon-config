@@ -26,17 +26,17 @@
     <name>Carbon Configuration</name>
     <description>Carbon configuration is responsible for creating and manipulating
     </description>
-    <packaging>bundle</packaging>
+    <!--<packaging>bundle</packaging>-->
     <url>http://wso2.com</url>
     <dependencies>
-        <dependency>
-            <groupId>org.wso2.eclipse.osgi</groupId>
-            <artifactId>org.eclipse.osgi</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.wso2.eclipse.osgi</groupId>
-            <artifactId>org.eclipse.osgi.services</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.wso2.eclipse.osgi</groupId>-->
+            <!--<artifactId>org.eclipse.osgi</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.wso2.eclipse.osgi</groupId>-->
+            <!--<artifactId>org.eclipse.osgi.services</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -45,22 +45,22 @@
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.jacoco</groupId>
-            <artifactId>org.jacoco.agent</artifactId>
-            <classifier>runtime</classifier>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.easymock</groupId>
-            <artifactId>easymock</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <scope>test</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.jacoco</groupId>-->
+            <!--<artifactId>org.jacoco.agent</artifactId>-->
+            <!--<classifier>runtime</classifier>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.easymock</groupId>-->
+            <!--<artifactId>easymock</artifactId>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.testng</groupId>-->
+            <!--<artifactId>testng</artifactId>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.wso2.carbon.secvault</groupId>
             <artifactId>org.wso2.carbon.secvault</artifactId>
@@ -72,64 +72,64 @@
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <inherited>false</inherited>
-                <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+                <!--<artifactId>maven-surefire-plugin</artifactId>-->
+                <!--<inherited>false</inherited>-->
+                <!--<configuration>-->
+                    <!--<suiteXmlFiles>-->
+                        <!--<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>-->
+                    <!--</suiteXmlFiles>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.9</source>
+                    <target>1.9</target>
                     <compilerArgument>-proc:none</compilerArgument>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <additionalparam>-Xdoclint:none</additionalparam>
-                            <show>public</show>
-                            <nohelp>true</nohelp>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.jacoco</groupId>-->
+                <!--<artifactId>jacoco-maven-plugin</artifactId>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>attach-javadocs</id>-->
+                        <!--<goals>-->
+                            <!--<goal>jar</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<additionalparam>-Xdoclint:none</additionalparam>-->
+                            <!--<show>public</show>-->
+                            <!--<nohelp>true</nohelp>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
         </plugins>
-        <resources>
-            <resource>
-                <filtering>true</filtering>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--<filtering>true</filtering>-->
+                <!--<directory>src/main/resources</directory>-->
+            <!--</resource>-->
+        <!--</resources>-->
     </build>
-    <properties>
-        <private.package>org.wso2.carbon.config.internal.*</private.package>
-        <export.package>
-            !org.wso2.carbon.config.internal.*,
-            org.wso2.carbon.config.*;version="${carbon.config.version}"
-        </export.package>
-        <import.package>
-            org.wso2.carbon.utils.*;version="${carbon.utils.package.import.version.range}",
-            org.wso2.carbon.secvault.*;version="${carbon.securevault.version.range}",
-            org.slf4j.*;version="${slf4j.logging.package.import.version.range}",
-            org.osgi.framework.*;version="${osgi.framework.package.import.version.range}",
-            org.yaml.snakeyaml.*;version="${org.snakeyaml.package.import.version.range}"
-        </import.package>
-    </properties>
+    <!--<properties>-->
+        <!--<private.package>org.wso2.carbon.config.internal.*</private.package>-->
+        <!--<export.package>-->
+            <!--!org.wso2.carbon.config.internal.*,-->
+            <!--org.wso2.carbon.config.*;version="${carbon.config.version}"-->
+        <!--</export.package>-->
+        <!--<import.package>-->
+            <!--org.wso2.carbon.utils.*;version="${carbon.utils.package.import.version.range}",-->
+            <!--org.wso2.carbon.secvault.*;version="${carbon.securevault.version.range}",-->
+            <!--org.slf4j.*;version="${slf4j.logging.package.import.version.range}",-->
+            <!--org.osgi.framework.*;version="${osgi.framework.package.import.version.range}",-->
+            <!--org.yaml.snakeyaml.*;version="${org.snakeyaml.package.import.version.range}"-->
+        <!--</import.package>-->
+    <!--</properties>-->
 </project>
